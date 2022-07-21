@@ -16,5 +16,13 @@ if (isset($path[2])) { $param = $path[2]; } else { $param = ''; }
 
 $method = $_SERVER['REQUEST_METHOD'];
 
+$GLOBALS['secretJWT'] = '123456';
+
+# Classes
 include_once "classes/db.class.php";
+include_once "classes/jwt.class.php";
+include_once "classes/usuarios.class.php";
+
+# API's
+include_once "api/usuarios/usuarios.php";
 include_once "api/clientes/clientes.php";
