@@ -16,8 +16,10 @@ class Clientes
         }
     }
 
-    public function listarUnico()
+    public function listarUnico($param)
     {
+        //var_dump("Parametro: ".$param);
+        
         $db = DB::connect();
         $rs = $db->prepare("SELECT * FROM clientes WHERE id={$param}");
         $rs->execute();
@@ -65,7 +67,7 @@ class Clientes
         }
     }
 
-    public function atualizar()
+    public function atualizar($param)
     {
         array_shift($_POST);
 
