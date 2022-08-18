@@ -1,0 +1,24 @@
+POST http://localhost/php_api/usuarios/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+login=netocosta
+&senha=123456
+
+###
+
+GET http://localhost/php_api/clientes/listar HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJuYW1lIjoiTmV0byBDb3N0YSIsImV4cGlyZXNfaW4iOjE2NjA3ODA1NDJ9.Edxlul7P7qOfWZvwOFS5OY4-1e_XgsEsI4kPcpSzxAg
+
+###
+
+GET http://localhost/php_api/clientes/listar/55 HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJuYW1lIjoiTmV0byBDb3N0YSIsImV4cGlyZXNfaW4iOjE2NjA3Nzg5MTZ9.2uMUQaWPaZ0fZGEuRgyyNhv5oM2m-jxCXUOsslqwI9w
+
+###
+
+POST http://localhost/php_api/clientes/atualizar/1 HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJuYW1lIjoiTmV0byBDb3N0YSIsImV4cGlyZXNfaW4iOjE2NjA3ODA1NDJ9.Edxlul7P7qOfWZvwOFS5OY4-1e_XgsEsI4kPcpSzxAg
+Content-Type: application/x-www-form-urlencoded
+
+_method=PUT
+&nome=Costa Neto
