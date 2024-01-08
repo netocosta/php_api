@@ -5,8 +5,9 @@ class Usuarios
     public function login()
     {
         if ($_POST) {
-            if (!$_POST['login'] OR !$_POST['senha']) {
-                echo json_encode(['ERRO' => 'Falta informacoes!']); exit; 
+            if (!$_POST['login'] or !$_POST['senha']) {
+                echo json_encode(['ERRO' => 'Falta informacoes!']);
+                exit;
             } else {
                 $login = addslashes(htmlspecialchars($_POST['login'])) ?? '';
                 $senha = addslashes(htmlspecialchars($_POST['senha'])) ?? '';
@@ -22,7 +23,7 @@ class Usuarios
                     $idDB          = $obj->id;
                     $nameDB        = $obj->nome;
                     $passDB        = $obj->senha;
-                    $validUsername = true; 
+                    $validUsername = true;
                     $validPassword = password_verify($senha, $passDB) ? true : false;
                 } else {
                     $validUsername = false;
@@ -47,9 +48,9 @@ class Usuarios
                 }
             }
         } else {
-            echo json_encode(['ERRO' => 'Falta informacoes!']); exit; 
+            echo json_encode(['ERRO' => 'Falta informacoes!']);
+            exit;
         }
-
     }
 
     public function verificar()
@@ -57,6 +58,8 @@ class Usuarios
         $headers = apache_request_headers();
         if (isset($headers['authorization'])) {
             $token = str_replace("Bearer ", "", $headers['authorization']);
+        } else if (isset($headers['Authorization'])) {
+            $token = str_replace("Bearer ", "", $headers['Authorization']);
         } else {
             echo json_encode(['ERRO' => 'Você não está logado, ou seu token é inválido.']);
             exit;
@@ -72,7 +75,7 @@ class Usuarios
         if ($rows > 0) :
             $idDB    = $obj->id;
             $tokenDB = $obj->token;
-            
+
             $decodedJWT = JWT::decode($tokenDB, $secretJWT);
             if ($decodedJWT->expires_in > time()) {
                 return true;
@@ -85,4 +88,3 @@ class Usuarios
         endif;
     }
 }
-

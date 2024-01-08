@@ -6,7 +6,7 @@ class DB
         $host = 'localhost';
         $user = 'root';
         $pass = '';
-        $base = 'api';
+        $base = 'financas_api';
 
         return new PDO("mysql:host={$host};dbname={$base};charset=UTF8;", $user, $pass);
     }
