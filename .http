@@ -7,17 +7,17 @@ login=netocosta
 ###
 
 GET http://localhost/financas/api/clientes/listar HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5ldG8gQ29zdGEiLCJleHBpcmVzX2luIjoxNzA0ODAyMDU4fQ.c29BC6WkfgdLHbu2BQdjx13mC3bHbNug0iI96zc2_-Y
+Authorization: Bearer 
 
 ###
 
 GET http://localhost/php_api/clientes/listar/55 HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJuYW1lIjoiTmV0byBDb3N0YSIsImV4cGlyZXNfaW4iOjE2NjA3Nzg5MTZ9.2uMUQaWPaZ0fZGEuRgyyNhv5oM2m-jxCXUOsslqwI9w
+Authorization: Bearer 
 
 ###
 
 POST http://localhost/php_api/clientes/atualizar/1 HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJuYW1lIjoiTmV0byBDb3N0YSIsImV4cGlyZXNfaW4iOjE2NjA3ODA1NDJ9.Edxlul7P7qOfWZvwOFS5OY4-1e_XgsEsI4kPcpSzxAg
+Authorization: Bearer 
 Content-Type: application/x-www-form-urlencoded
 
 _method=PUT
